@@ -10,7 +10,7 @@ public class EmployeeWageBuilder{
 		int empHours = 0; int totalWorkingHours = 0; int totalWorkingDays = 0;
 		
 		while(totalWorkingHours <=maxWorkingHours && 
-								totalWorkingDays <= numOfWorkingDays) {
+								totalWorkingDays < numOfWorkingDays) {
 			int empCheck = (int) Math.floor(Math.random()*10) % 3;
 			switch(empCheck){
 				case isFullTime:
