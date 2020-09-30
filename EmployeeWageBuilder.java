@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class EmployeeWageBuilder implements IComputeEmpWage {
-	
+
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
 	
@@ -25,6 +25,11 @@ public class EmployeeWageBuilder implements IComputeEmpWage {
 			companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
 			System.out.println(companyEmpWage);
 		}
+	}
+	
+	@Override
+	public int getTotalWage(String company) {
+		return companyToEmpWageMap.get(company).totalEmpWage;
 	}
 	
 	private int computeEmpWage(CompanyEmpWage companyEmpWage){
@@ -56,5 +61,6 @@ public class EmployeeWageBuilder implements IComputeEmpWage {
 		empWageBuilder.addCompanyEmpWage("DMart", 20, 2, 10);
 		empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 20);
 		empWageBuilder.computeEmpWage();
+		System.out.println("Total Wage for DMart Company: " + empWageBuilder.getTotalWage("DMart"));
 	}
 }
