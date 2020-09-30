@@ -18,7 +18,7 @@ public class CompanyEmpWage{
 		this.totalEmpWage = totalEmpWage;
 	}
 	
-	@override
+	@Override
 	public String toString(){
 		return "Total Employee Wage for Company: "+ company + " is: " + totalEmpWage;
 	}
